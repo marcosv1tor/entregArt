@@ -117,6 +117,11 @@
   display: flex;
   flex-direction: column;
   margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-open {
+  margin-left: 250px;
 }
 
 /* Header */
@@ -166,17 +171,8 @@
 
 /* Responsive */
 @media (min-width: 768px) {
-  .sidebar {
-    position: static;
-    transform: translateX(0);
-  }
-  
   .sidebar-overlay {
     display: none;
-  }
-  
-  .main-content {
-    margin-left: 250px;
   }
   
   .desktop-hidden {
@@ -185,7 +181,7 @@
 }
 
 @media (max-width: 767px) {
-  .main-content {
+  .main-content.sidebar-open {
     margin-left: 0;
   }
   

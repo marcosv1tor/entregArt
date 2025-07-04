@@ -20,6 +20,10 @@ const Layout = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   const handleLogout = async () => {
     try {
       await logout();
@@ -95,12 +99,12 @@ const Layout = ({ children }) => {
       )}
 
       {/* Main content */}
-      <div className="main-content">
+      <div className={`main-content ${sidebarOpen ? 'sidebar-open' : ''}`}>
         {/* Header */}
         <header className="header">
           <button 
             className="sidebar-toggle"
-            onClick={() => setSidebarOpen(true)}
+            onClick={toggleSidebar}
           >
             <Menu size={20} />
           </button>
