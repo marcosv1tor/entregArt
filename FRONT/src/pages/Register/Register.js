@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useAuth } from '../../contexts/AuthContext';
-import { Eye, EyeOff, UserPlus } from 'lucide-react';
+import { Eye, EyeOff, UserPlus, DollarSign } from 'lucide-react';
 import './Register.css';
 
 const Register = () => {
@@ -40,7 +40,12 @@ const Register = () => {
     <div className="register-container">
       <div className="register-card">
         <div className="register-header">
-          <h1 className="register-title">EntregArt</h1>
+          <div className="register-title-container">
+            <div className="register-icon">
+              <DollarSign size={24} />
+            </div>
+            <h1 className="register-title">EntregArt</h1>
+          </div>
           <p className="register-subtitle">Crie sua conta</p>
         </div>
 
