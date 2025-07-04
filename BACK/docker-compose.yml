@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  # Aplicação Node.js
+  app:
+    build: .
+    container_name: entregart-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/entregart
+      - JWT_SECRET=ENTREGART
+      - JWT_EXPIRES_IN=24h
+      - CORS_ORIGIN=http://localhost:3001
+    depends_on:
+      - mongo
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - entregart-network
+    restart: unless-stopped
+
+  # Banco de dados MongoDB
+  mongo:
+    image: mongo:6.0
+    container_name: entregart-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=entregart
+    volumes:
+      - mongo-data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d
+    networks:
+      - vendergas-network
+    restart: unless-stopped
+
+  # Interface web para MongoDB (opcional)
+  mongo-express:
+    image: mongo-express:latest
+    container_name: entregart-mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=admin123
+    depends_on:
+      - mongo
+    networks:
+      - vendergas-network
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
+    driver: local
+
+networks:
+  entregart-network:
+    driver: bridge

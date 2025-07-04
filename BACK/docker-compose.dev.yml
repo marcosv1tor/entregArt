@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # Apenas MongoDB para desenvolvimento local
+  mongo:
+    image: mongo:6.0
+    container_name: entregart-mongodb-dev
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=entregart
+    volumes:
+      - mongo-data-dev:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d
+    networks:
+      - entregart-network
+    restart: unless-stopped
+
+  # Interface web para MongoDB (opcional)
+  mongo-express:
+    image: mongo-express:latest
+    container_name: entregart-mongo-express-dev
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=admin123
+    depends_on:
+      - mongo
+    networks:
+      - vendergas-network
+    restart: unless-stopped
+
+volumes:
+  mongo-data-dev:
+    driver: local
+
+networks:
+  entregart-network:
+    driver: bridge
