@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useAuth } from '../../contexts/AuthContext';
-import { Eye, EyeOff, LogIn } from 'lucide-react';
+import { Eye, EyeOff, LogIn, DollarSign } from 'lucide-react';
 import './Login.css';
 
 const Login = () => {
@@ -36,7 +36,12 @@ const Login = () => {
     <div className="login-container">
       <div className="login-card">
         <div className="login-header">
-          <h1 className="login-title">EntregArt</h1>
+          <div className="login-title-container">
+            <div className="login-icon">
+              <DollarSign size={24} />
+            </div>
+            <h1 className="login-title">EntregArt</h1>
+          </div>
           <p className="login-subtitle">Faça login em sua conta</p>
         </div>
 

@@ -166,7 +166,7 @@ const Dashboard = () => {
             <DollarSign size={24} />
           </div>
           <div className="stat-content">
-            <h3 className="stat-number">{formatCurrency(stats.vendas)}</h3>
+            <h3 style={{ color: '#dbeafe' }} className="stat-number">{formatCurrency(stats.vendas)}</h3>
             <p className="stat-label">Vendas Recentes</p>
           </div>
           <div className="stat-trend">

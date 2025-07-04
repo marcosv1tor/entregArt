@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-600) 100%);
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 50%, #dbeafe 100%);
   padding: 1rem;
 }
 
@@ -18,14 +18,34 @@
 
 .register-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.register-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.register-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 .register-title {
   font-size: 2rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin: 0 0 0.5rem 0;
+  margin: 0;
 }
 
 .register-subtitle {
@@ -37,7 +57,10 @@
 .register-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
 }
 
 .password-input-container {
