@@ -29,7 +29,7 @@ O projeto está dividido em duas partes principais:
 - **Gerenciamento de Estado**: Context API
 - **Documentação**: [README do Frontend](./FRONT/README.md)
 
-## 🚀 Como Executar
+## Como Executar
 
 ### Pré-requisitos
 - Node.js (v14 ou superior)
