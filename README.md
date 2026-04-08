@@ -1,8 +1,8 @@
 # EntregArt - Hub de vendas
 
-🚀 **Sistema completo de gestão de comércio** desenvolvido com tecnologias modernas para facilitar a administração de vendas, produtos, clientes e pedidos.
+**Sistema completo de gestão de comércio** desenvolvido com tecnologias modernas para facilitar a administração de vendas, produtos, clientes e pedidos.
 
-## 📋 Sobre o Projeto
+## Sobre o Projeto
 
 O EntregArt é uma plataforma web completa que oferece:
 
@@ -13,17 +13,17 @@ O EntregArt é uma plataforma web completa que oferece:
 - **Dashboard Analítico**: Relatórios e métricas de vendas
 - **Sistema de Autenticação**: Login seguro com JWT
 
-## 🏗️ Arquitetura do Projeto
+## Arquitetura do Projeto
 
 O projeto está dividido em duas partes principais:
 
-### 📁 BACK/ - Backend API
+### BACK/ - Backend API
 - **Tecnologia**: Node.js + Express.js
 - **Banco de Dados**: MongoDB
 - **Autenticação**: JWT (JSON Web Tokens)
 - **Documentação**: [README do Backend](./BACK/README.md)
 
-### 📁 FRONT/ - Frontend Web
+### FRONT/ - Frontend Web
 - **Tecnologia**: React.js
 - **Estilização**: CSS3 + Design Responsivo
 - **Gerenciamento de Estado**: Context API
@@ -56,13 +56,13 @@ cd BACK
 docker-compose -f docker-compose.dev.yml up
 ```
 
-## 🌐 Acesso
+## Acesso
 
 - **Frontend**: http://localhost:3000
 - **Backend API**: http://localhost:5000
 - **MongoDB Express**: http://localhost:8081
 
-## 📊 Funcionalidades
+## Funcionalidades
 
 ### Dashboard
 - Visão geral das vendas
@@ -104,14 +104,14 @@ docker-compose -f docker-compose.dev.yml up
 - Docker Compose
 - MongoDB Express
 
-## 📝 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👥 Equipe
+## Equipe
 
 **EntregArt Team** - Desenvolvimento e manutenção
 
 ---
 
-⭐ **EntregArt - Hub de vendas**: Transformando a gestão comercial com tecnologia moderna e interface intuitiva.
+**EntregArt - Hub de vendas**: Transformando a gestão comercial com tecnologia moderna e interface intuitiva.
