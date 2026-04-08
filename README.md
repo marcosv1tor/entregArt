@@ -81,7 +81,7 @@ docker-compose -f docker-compose.dev.yml up
 - Validação de dados
 - Hash de senhas
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Backend
 - Node.js
